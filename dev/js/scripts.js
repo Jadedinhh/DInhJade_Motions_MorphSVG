@@ -1,27 +1,23 @@
 import { gsap } from "gsap";
-import { GSDevTools } from "gsap/GSDevTools";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { MotionPathHelper } from "gsap/MotionPathHelper";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 //register all plugins
-gsap.registerPlugin(GSDevTools, MotionPathPlugin, DrawSVGPlugin, MotionPathHelper);
+gsap.registerPlugin(MotionPathPlugin, DrawSVGPlugin, MorphSVGPlugin);
 
 const mainTL = gsap.timeline({id:"mainTL"});
 
-mainTL.to("#Ellipse", {duration: 1, morphSVG: "#Star"});
-// function imageMorph(){
-//     let tl = gsap.timeline();
+
+function imageMorph(){
+    let tl = gsap.timeline();
     
-// tl.to("#Ellipse", {duration: 1, morphSVG: "#Star"}, "+=1")
-//   .to("#Ellipse", {duration: 1, morphSVG: "#Circle"}, "+=1");
+tl.to("#Ellipse", {duration: 1, morphSVG: "#Star"}, "+=1")
+  .to("#Ellipse", {duration: 1, morphSVG: "#Circle"}, "+=1");
 
-//   return tl;
+  return tl;
 
-// }
+}
 
 mainTL.add(imageMorph())
 ;
-
-
-GSDevTools.create();
