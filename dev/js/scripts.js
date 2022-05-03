@@ -9,16 +9,16 @@ gsap.registerPlugin(GSDevTools, MotionPathPlugin, DrawSVGPlugin, MotionPathHelpe
 
 const mainTL = gsap.timeline({id:"mainTL"});
 
-
-function imageMorph(){
-    let tl = gsap.timeline();
+mainTL.to("#Ellipse", {duration: 1, morphSVG: "#Star"});
+// function imageMorph(){
+//     let tl = gsap.timeline();
     
-tl.to("#Ellipse", {duration: 1, morphSVG: "#Star"}, "+=1")
-  .to("#Ellipse", {duration: 1, morphSVG: "#Circle"}, "+=1");
+// tl.to("#Ellipse", {duration: 1, morphSVG: "#Star"}, "+=1")
+//   .to("#Ellipse", {duration: 1, morphSVG: "#Circle"}, "+=1");
 
-  return tl;
+//   return tl;
 
-}
+// }
 
 mainTL.add(imageMorph())
 ;
