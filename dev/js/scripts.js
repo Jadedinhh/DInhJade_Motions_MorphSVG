@@ -1,24 +1,25 @@
 import { gsap } from "gsap";
-// // import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-// // import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-
-// //register all plugins
-// // gsap.registerPlugin( DrawSVGPlugin, MorphSVGPlugin);
-
-// const mainTL = gsap.timeline({id:"mainTL"});
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 
-// function imageMorph(){
-//     let tl = gsap.timeline();
+gsap.registerPlugin( DrawSVGPlugin, MorphSVGPlugin);
+
+MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
+
+const mainTL = gsap.timeline({id:"mainTL"});
+
+
+function imageMorph(){
+    let tl = gsap.timeline();
     
-// // tl.to("#Ellipse", {duration: 1, morphSVG: "#Star"}, "+=1")
-// //   .to("#Ellipse", {duration: 1, morphSVG: "#Circle"}, "+=1");
+tl.to("#Ellipse", {duration: 2, morphSVG: "#Star", fill:"FFB1B1", stroke:"FFFFFF"}, "+=1")
+  .to("#Ellipse", {duration: 1, morphSVG: "#Circle", fill:"FFA800", stroke:"A6B4FA"}, "+=1");
 
-//   return tl;
+  return tl;
 
-// }
+}
 
-// mainTL.add(imageMorph())
-// ;
+mainTL.add(imageMorph())
+;
 
-gsap.to("#Ellipse", {duration:1, scale: 0.5});
