@@ -13,7 +13,7 @@ const mainTL = gsap.timeline({id:"mainTL"});
 function imageMorph(){
     let tl = gsap.timeline();
     
-tl.to("#Ellipse", {duration: 2, morphSVG: "#Star", fill:"FFB1B1", stroke:"FFFFFF"}, "+=1")
+tl.to("#Ellipse", {duration: 2, morphSVG: "#Star", fill:"FFFFFF", stroke:"FFFFFF"}, "+=1")
   .to("#Ellipse", {duration: 1, morphSVG: "#Circle", fill:"FFA800", stroke:"A6B4FA"}, "+=1");
 
   return tl;
